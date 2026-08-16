@@ -1,0 +1,45 @@
+Library Project Planning
+========================
+Library app must perform following operations:
+Add books
+Find books
+Check out books
+Return books
+Get available books
+Get checked out books
+Display Library Status (Status of all books in library)
+
+Program Flow
+-------------
+1) Ask User what they would like to do
+2) Get operation
+3) Perform Operation
+4) Complete
+
+Approach
+--------
+Have a Program.cs to control flow which should only contain methods
+Create another class called LibraryOperations to code operations
+
+In Main:
+1) GetOperation
+2) PerformOperation
+
+Should keep asking user for operations until user is complete
+
+Data Structures of Project
+--------------------------
+A book will only have a title for this project.
+If we add book to library, AddBook("The Hobbit"), which should add a book to a structure to be stored.
+The structure will be a dictionary as it can be Key: bookTitle and Value: available
+So The Hobbit: true
+Dictionary<string, bool> libraryStorage = new Dictionary<string, bool>();
+
+CheckOutBook("The Hobbit") => The Hobbit: false
+ReturnBook("The Hobbit") => The Hobbit: true
+FindBook will try to find Key which is the title
+GetAvailableBooks will return the list of available books where status is true
+GetCheckedOutBooks will return list of unavailable books where status is false
+DisplayLibraryStatus will return list of books and their status
+
+
