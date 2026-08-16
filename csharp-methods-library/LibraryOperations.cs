@@ -152,7 +152,7 @@ namespace csharp_methods_library
             Console.WriteLine("Books in Library: ");
             foreach (var book in libraryStorage)
             {
-                Console.WriteLine($"Book {book.Key} is {BookStatusNaturalLang(book.Value)}");
+                Console.WriteLine($"Book \"{book.Key}\" is {BookStatusNaturalLang(book.Value)}");
             }
         }
 
