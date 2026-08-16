@@ -33,8 +33,15 @@ namespace csharp_methods_library
         {
             if (ValidInput(bookTitle) == true)
             {
-                libraryStorage.Add(bookTitle, true);
-                Console.WriteLine($"Added book {bookTitle} to library");
+                if (libraryStorage.TryGetValue(bookTitle, out bool status) == true)
+                {
+                    Console.WriteLine("Book is already in the system");
+                }
+                else
+                {
+                    libraryStorage.Add(bookTitle, true);
+                    Console.WriteLine($"Added book {bookTitle} to library");
+                }
             }
             else
             {
